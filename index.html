@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDP - Markdown Plus Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+    <div id="app" class="mdp-container">
+        <!-- Top Menu Bar -->
+        <div id="topbar" class="topbar">
+            <div class="menu-group">
+                <button id="btn-new" class="btn" title="New Document">📄 New</button>
+                <button id="btn-open" class="btn" title="Open File">📂 Open</button>
+                <button id="btn-save" class="btn" title="Save File">💾 Save</button>
+            </div>
+            <div class="menu-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="preview-toggle" title="Toggle Preview">
+                    <span>Preview</span>
+                </label>
+            </div>
+            <div class="menu-group">
+                <button id="btn-help" class="btn" title="Help">❓ Help</button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Sidebar with Lib Buttons -->
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Libraries</h3>
+                    <button class="lib-btn" id="btn-markdown" title="Markdown Help">📝 Markdown</button>
+                    <button class="lib-btn" id="btn-math" title="Math Formulas">∑ Math</button>
+                    <button class="lib-btn" id="btn-chem" title="Chemistry">⚗️ Chemistry</button>
+                    <button class="lib-btn" id="btn-svg" title="SVG">🎨 SVG</button>
+                    <button class="lib-btn" id="btn-mermaid" title="Mermaid Diagrams">📊 Mermaid</button>
+                    <button class="lib-btn" id="btn-wiki" title="Wiki Shortcuts">📖 Wiki</button>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Quick Format</h3>
+                    <button class="format-btn" id="btn-bold" title="Bold">B</button>
+                    <button class="format-btn" id="btn-italic" title="Italic">I</button>
+                    <button class="format-btn" id="btn-code" title="Code">&lt;&gt;</button>
+                    <button class="format-btn" id="btn-link" title="Link">🔗</button>
+                </div>
+            </div>
+
+            <!-- Editor and Preview Container -->
+            <div class="editor-container">
+                <!-- Editor -->
+                <div class="editor-wrapper">
+                    <textarea id="editor" class="editor" placeholder="Write your markdown here..." spellcheck="false"></textarea>
+                </div>
+
+                <!-- Preview -->
+                <div id="preview" class="preview hidden">
+                    <div id="preview-content" class="preview-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Syntax Help Modal -->
+        <div id="syntax-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Syntax Help</h2>
+                <div id="modal-body" class="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- File Input (Hidden) -->
+        <input type="file" id="file-input" style="display:none;" accept=".md,.txt,.markdown">
+    </div>
+
+    <!-- Application Scripts -->
+    <script src="js/libs/syntax-highlighter.js"></script>
+    <script src="js/libs/math-handler.js"></script>
+    <script src="js/libs/chem-handler.js"></script>
+    <script src="js/libs/svg-handler.js"></script>
+    <script src="js/libs/mermaid-handler.js"></script>
+    <script src="js/libs/wiki-shortcuts.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/ui/toolbar.js"></script>
+    <script src="js/ui/sidebar.js"></script>
+    <script src="js/ui/preview.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
