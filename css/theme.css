@@ -1,0 +1,85 @@
+/* Light Theme (Default) */
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #1e1e1e;
+    --text-secondary: #666666;
+    
+    --topbar-bg: #f5f5f5;
+    --sidebar-bg: #fafafa;
+    --editor-bg: #ffffff;
+    --preview-bg: #fafafa;
+    --modal-bg: #ffffff;
+    
+    --btn-bg: #e8e8e8;
+    --btn-hover-bg: #d0d0d0;
+    --btn-hover-border: #999999;
+    
+    --accent-color: #0066cc;
+    --border-color: #e0e0e0;
+    
+    --code-bg: #f0f0f0;
+    --code-text: #d73a49;
+    --table-header-bg: #f0f0f0;
+    
+    --scrollbar-track: #f0f0f0;
+    --scrollbar-thumb: #cccccc;
+    --scrollbar-thumb-hover: #999999;
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1e1e1e;
+        --text-primary: #e0e0e0;
+        --text-secondary: #999999;
+        
+        --topbar-bg: #252525;
+        --sidebar-bg: #2d2d2d;
+        --editor-bg: #1e1e1e;
+        --preview-bg: #252525;
+        --modal-bg: #2d2d2d;
+        
+        --btn-bg: #3a3a3a;
+        --btn-hover-bg: #4a4a4a;
+        --btn-hover-border: #666666;
+        
+        --accent-color: #4a9eff;
+        --border-color: #404040;
+        
+        --code-bg: #2d2d2d;
+        --code-text: #f48771;
+        --table-header-bg: #3a3a3a;
+        
+        --scrollbar-track: #2d2d2d;
+        --scrollbar-thumb: #404040;
+        --scrollbar-thumb-hover: #555555;
+    }
+}
+
+/* Optional: Add manual dark mode toggle */
+body.dark-mode {
+    --bg-primary: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #999999;
+    
+    --topbar-bg: #252525;
+    --sidebar-bg: #2d2d2d;
+    --editor-bg: #1e1e1e;
+    --preview-bg: #252525;
+    --modal-bg: #2d2d2d;
+    
+    --btn-bg: #3a3a3a;
+    --btn-hover-bg: #4a4a4a;
+    --btn-hover-border: #666666;
+    
+    --accent-color: #4a9eff;
+    --border-color: #404040;
+    
+    --code-bg: #2d2d2d;
+    --code-text: #f48771;
+    --table-header-bg: #3a3a3a;
+    
+    --scrollbar-track: #2d2d2d;
+    --scrollbar-thumb: #404040;
+    --scrollbar-thumb-hover: #555555;
+}
