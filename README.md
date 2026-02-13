@@ -1,3 +1,5 @@
+# WIP - not working so far
+
 # MDP - Markdown Plus Editor
 
 A feature-rich markdown editor written in vanilla JavaScript with support for advanced syntax, interactive previews, and multiple rendering libraries.
