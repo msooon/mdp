@@ -7,12 +7,12 @@ class MathHandler {
     static processBlocks(html) {
         // Display math ($$...$$)
         html = html.replace(/\$\$([^$]+)\$\$/g, (match, content) => {
-            return \`<div class=\"math-display\" data-math=\"\${this.escapeAttr(content)}\">$$\${content}$$</div>\`;
+            return `<div class=\"math-display\" data-math=\"\${this.escapeAttr(content)}\">$$\${content}$$</div>`;
         });
 
         // Inline math ($...$) - be careful not to match single $
         html = html.replace(/([^$]|^)\$([^$\n]+)\$([^$]|$)/g, (match, before, content, after) => {
-            return before + \`<span class=\"math-inline\" data-math=\"\${this.escapeAttr(content)}\">$\${content}$</span>\` + after;
+            return before + `<span class=\"math-inline\" data-math=\"\${this.escapeAttr(content)}\">$\${content}$</span>` + after;
         });
 
         return html;

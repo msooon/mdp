@@ -6,12 +6,20 @@
 class ChemHandler {
     static processBlocks(html) {
         // Chemistry formulas in [CHEM]...[/CHEM]
-        html = html.replace(/\\[CHEM\\](.*?)\\[\\/CHEM\\]/gi, (match, content) => {
-            return ` <div class="chem-formula" data-formula="${this.escapeAttr(content)}"></div>`;
-        });
+				html = html.replace(/\[CHEM\](.*?)\[\/CHEM\]/gi, (match, content) => {
+					return `<div class="chem-formula" data-formula="${this.escapeAttr(content)}"></div>`;
+});
+
+// Match ```svg ... ```
+const svgBlockRegex = /```svg\n([\s\S]*?)```/gi;
+
+html = html.replace(svgBlockRegex, (match, content) => {
+    return `<div class="svg-block">${content}</div>`;
+});
+
 
         // Simple inline chemistry notation [H2O], [CO2], etc.
-        html = html.replace(/\\[([A-Za-z0-9()]+)\\]/g, (match, content) => {
+        html = html.replace(/\[([A-Za-z0-9()]+)\]/g, (match, content) => {
             if (this.isChemFormula(content)) {
                 return `<span class="chem-inline" data-formula="${content}">${this.formatFormula(content)}</span>`;
             }

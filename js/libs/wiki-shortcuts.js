@@ -6,7 +6,7 @@
 class WikiShortcuts {
     static processWikiLinks(text) {
         // [[Page Name]] - Internal wiki link
-        text = text.replace(/\\[\\[([^\\]]+)\\]\]/g, (match, content) => {
+        text = text.replace(/\[\[(\[^\]\]+)\]\]/g, (match, content) => {
             const parts = content.split('|');
             const pageName = parts[0].trim();
             const displayText = parts[1] ? parts[1].trim() : pageName;
@@ -40,7 +40,7 @@ class WikiShortcuts {
 
     static extractWikiLinks(text) {
         const links = [];
-        const regex = /\\[\\[([^\\]]+)\\]\]/g;
+        const regex = /\[\[([^\]]+)\]\]/g;
         let match;
 
         while ((match = regex.exec(text)) !== null) {

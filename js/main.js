@@ -313,7 +313,7 @@ Types: graph, sequence, class, state, pie, gantt
 
 *emphasis* - Italic
 **strong** - Bold
-\\`code\\` - Code
+\`code\` - Code
 
 == Heading 2 ==
 === Heading 3 ===
